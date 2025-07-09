@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idea-plugin>
+    <id>me.seungjun.colorfuldelimiter</id>
+    <name>Colorful Delimiter</name>
+    <version>1.0.0</version>
+    <vendor email="work@seungjun.me" url="https://github.com/ileeric">Seungjun Lee</vendor>
+
+    <description><![CDATA[
+        A plugin that colors matching delimiters with the same color to improve code readability across all JetBrains IDEs.
+        Supports parentheses (), curly braces {}, square brackets [], and quotes ', ", `.
+        Handles single quotes, double quotes, backticks, and triple quotes (''', """, ```).
+        Each pair of matching delimiters is colored with a unique color to help identify code blocks and strings.
+        
+        Compatible with IntelliJ IDEA, WebStorm, PyCharm, CLion, PHPStorm, RubyMine, GoLand, Rider, Android Studio, DataGrip, and more.
+        Works with 50+ programming languages including Java, Python, JavaScript, C++, PHP, Ruby, Go, C#, and many others.
+    ]]></description>
+
+    <change-notes><![CDATA[
+        Version 1.0.0:
+        - Initial release
+        - Color matching delimiters with same color
+        - Support for (), {}, [] brackets
+        - Support for ', ", ` quotes (including triple quotes)
+    ]]></change-notes>
+
+    <idea-version since-build="232"/>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- General -->
+        <annotator language="TEXT" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="JSON" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="XML" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="YAML" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="Properties" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        
+        <!-- IntelliJ IDEA -->
+        <annotator language="JAVA" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="kotlin" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="Groovy" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="Scala" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        
+        <!-- WebStorm -->
+        <annotator language="JavaScript" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="TypeScript" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="HTML" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="CSS" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="LESS" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="SASS" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="SCSS" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="Vue" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="Angular2Html" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        
+        <!-- PyCharm -->
+        <annotator language="Python" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="Django" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="Jinja2" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        
+        <!-- CLion -->
+        <annotator language="C" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="C++" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="ObjectiveC" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        
+        <!-- PHPStorm -->
+        <annotator language="PHP" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="blade" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="Twig" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        
+        <!-- RubyMine -->
+        <annotator language="ruby" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="RHTML" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="YAML" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        
+        <!-- GoLand -->
+        <annotator language="go" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        
+        <!-- Rider -->
+        <annotator language="C#" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="VB.NET" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="F#" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        
+        <!-- Android Studio -->
+        <annotator language="Smali" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        
+        <!-- DataGrip -->
+        <annotator language="SQL" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        
+        <!-- Other common languages -->
+        <annotator language="Bash" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="Shell Script" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="PowerShell" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="Dockerfile" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="Markdown" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="LaTeX" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="R" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="Rust" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="Swift" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="Dart" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="Lua" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="Perl" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="Haskell" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="Erlang" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="Elixir" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+        <annotator language="Clojure" implementationClass="me.seungjun.colorfuldelimiter.ColorfulDelimiterAnnotator"/>
+    </extensions>
+
+    <actions>
+    </actions>
+</idea-plugin>
