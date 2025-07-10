@@ -23,6 +23,7 @@ intellij {
 
 patchPluginXml {
     sinceBuild = '221'
+    untilBuild = ''
 }
 
 signPlugin {
